@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Entities;
 using AdoConnection;
 
-namespace InsertPublisherApp
+namespace PublisherApp
 {
     class Program
     {

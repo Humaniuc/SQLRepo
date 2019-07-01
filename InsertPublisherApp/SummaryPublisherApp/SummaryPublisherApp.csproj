@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B58483D-68C6-496F-8053-4A48620F19FC}</ProjectGuid>
+    <ProjectGuid>{7A72B069-F912-48B8-8E97-FA4BDA840B17}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>InsertPublisherApp</RootNamespace>
-    <AssemblyName>InsertPublisherApp</AssemblyName>
+    <RootNamespace>SummaryPublisherApp</RootNamespace>
+    <AssemblyName>SummaryPublisherApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

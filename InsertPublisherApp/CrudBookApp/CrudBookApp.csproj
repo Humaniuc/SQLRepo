@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B58483D-68C6-496F-8053-4A48620F19FC}</ProjectGuid>
+    <ProjectGuid>{6B7E22F9-C7BB-4DC6-ACF4-514A162B9B3F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>InsertPublisherApp</RootNamespace>
-    <AssemblyName>InsertPublisherApp</AssemblyName>
+    <RootNamespace>CrudBookApp</RootNamespace>
+    <AssemblyName>CrudBookApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

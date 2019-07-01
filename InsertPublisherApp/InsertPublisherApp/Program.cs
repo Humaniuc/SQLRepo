@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities;
+using AdoConnection;
 
 namespace InsertPublisherApp
 {
@@ -11,8 +13,13 @@ namespace InsertPublisherApp
     {
         static void Main(string[] args)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-C6SIFK8;Initial Catalog=BookCase;Integrated Security=True");
+            var connection = ConnectionManager.GetConnection();
+            var publisherRepo = new PublisherRepo(connection);
 
+            var pub = new Publisher { Id = 15, PublisherName = "Militara" };
+            var id = publisherRepo.InsertPublisher(pub);
+
+            Console.WriteLine($"inserted publisher with {id}");
         }
     }
 }

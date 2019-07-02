@@ -33,13 +33,12 @@ namespace SerializeLists
                 File.AppendAllText("Books.json", jSonSerializeRezult + Environment.NewLine);
             }
 
-            if (File.Exists("Books.xml"))
+            using (var writer = new System.IO.StreamWriter("Books.xml"))
             {
-                File.Delete("Books.xml");
+                var serializer = new XmlSerializer(books.GetType());
+                serializer.Serialize(writer, books);
+                writer.Flush();
             }
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Book));
-            TextWriter writer = new StreamWriter("Books.xml");
-            xmlSerializer.Serialize(writer, books);
-    }
+        }
     }
 }

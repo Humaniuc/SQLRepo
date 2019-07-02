@@ -303,5 +303,39 @@ namespace AdoConnection
                 Console.WriteLine($"{(obj as Book).Title}, Year: {(obj as Book).Year}, Price: {(obj as Book).Price}");
             }
         }
+        
+        public List<Book> LoadAllBooks()
+        {
+            List<Book> books = new List<Book>();
+            const string query = @"select * from Book;";
+            var command = new SqlCommand
+            {
+                CommandText = query,
+                Connection = connection
+            };
+
+            using (var reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        var id = (int)reader["BookId"];
+                        var title = (string)reader["Title"];
+                        var publisherId = (int)reader["PublisherId"];
+                        var year = (int)reader["Year"];
+                        var price = (decimal)reader["Price"];
+
+                        books.Add(new Book { Id = id, Title = title, PublisherId = publisherId, Year = year, Price = price });
+                    }
+                    return books;
+                }
+                else
+                {
+                    throw new InvalidOperationException("There are no rows");
+                }
+            }
+
+        }
     }
 }
